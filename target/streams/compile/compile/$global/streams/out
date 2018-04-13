@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/main/scala/dominio/FideicomitenteConstructor.scala:12:19: missing parameter type for expanded function ((x$1: <error>) => "^([A-Z][a-z]+)( [A-Z][a-z]+)+$".r.findFirstIn(x$1).map(((x$2) => new Nombre(x$2))))[0m
+[0m[[0m[31merror[0m] [0m[0m      findFirstIn(_).map(new Nombre(_))[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/main/scala/dominio/FideicomitenteConstructor.scala:20:17: missing parameter type for expanded function ((x$3: <error>) => "^([A-Z][a-z]+)( [A-Z][a-z]+)+$".r.findFirstIn(x$3).map(((x$4) => new Ciudad(x$4))))[0m
+[0m[[0m[31merror[0m] [0m[0m    findFirstIn(_).map(new Ciudad(_))[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

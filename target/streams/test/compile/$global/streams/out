@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/test/scala/FideicomitenteTest.scala:1:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.FunSuite[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/test/scala/FideicomitenteTest.scala:4:35: not found: type FunSuite[0m
+[0m[[0m[31merror[0m] [0m[0mclass FideicomitenteTest  extends FunSuite {[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/test/scala/FideicomitenteTest.scala:5:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("CiudadTest") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fp101q1/fiduciaria/src/test/scala/FideicomitenteTest.scala:6:37: value === is not a member of Option[dominio.Ciudad][0m
+[0m[[0m[31merror[0m] [0m[0m    assert(Ciudad.apply("Medellin") === Option(Ciudad))[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
