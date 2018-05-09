@@ -1,15 +1,16 @@
 package dominio
 
-case class PatrimonioAutonomo (identificacion: Identificacion, inmueble: Inmueble,
-                               recursos: Recurso)
+case class PatrimonioAutonomo (identificacion: String, inmueble: Inmueble,
+                               recursos: Double)
 
-case class Inmueble (descripcionLinderos: String, folioMatricula: NumeroFolio,
-                     OficRegisInstrumentos: Ciudad)
+case class Inmueble (descripcionLinderos: String, folioMatricula: String,
+                     ciudadRegistro: Option[Ciudad])
 
-case class Identificacion()
+case class Ciudad(value: String)
 
-case class Recurso()
-
-case class NumeroFolio()
+object Ciudad {
+  def apply(value: String): Option[Ciudad] =
+    "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\\s]*)+$".r.findFirstIn(value).map(new Ciudad(_))
+}
 
 

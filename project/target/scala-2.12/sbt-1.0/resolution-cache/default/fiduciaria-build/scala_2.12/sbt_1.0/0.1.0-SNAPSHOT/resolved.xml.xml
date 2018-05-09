@@ -4,7 +4,7 @@
 		module="fiduciaria-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180413104217"
+		publication="20180508132536"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

@@ -1,5 +1,0 @@
-package dominio
-
-class Fideicomitente {
-
-}

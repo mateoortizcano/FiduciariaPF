@@ -9,4 +9,3 @@ case class FormaPago (valorEncargoFiduciario: Precio, pagoInmediato: Precio,
 
 case class EstadoCivil()
 
-case class Precio()

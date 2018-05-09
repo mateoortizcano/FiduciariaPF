@@ -4,7 +4,7 @@
 		module="fiduciaria_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180413113919"
+		publication="20180508133033"
 	>
 		<description>
 		fiduciaria
@@ -30,7 +30,14 @@
 		<artifact name="fiduciaria_2.12" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.5" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.12.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.4" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.5" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick_2.12" rev="3.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-nop" rev="1.6.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick-hikaricp_2.12" rev="3.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.postgresql" name="postgresql" rev="9.4-1206-jdbc4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-http_2.12" rev="10.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.11" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
