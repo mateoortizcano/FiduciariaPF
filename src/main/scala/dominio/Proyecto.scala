@@ -10,7 +10,7 @@ trait Construccion extends Etapa
 trait Escrituracion extends Etapa
 
 case class Proyecto [A <: Etapa] (nombre: Nombre, patrimonioAutonomo: PatrimonioAutonomo,
-                     puntoEquilibrio: PuntoEquilibrio, exedentes: Excedentes, etapa: A,
+                     puntoEquilibrio: PuntoEquilibrio, exedentes: Excedentes,
                      unidadesVivienda: Unidad, precioUnitario: Precio, presupuesto: Presupuesto)
 
 case class Nombre(value: String)
