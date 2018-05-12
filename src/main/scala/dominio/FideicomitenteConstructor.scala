@@ -4,16 +4,6 @@ case class FideicomitenteConstructor (nombre: Nombre, ciudadResidencia: Ciudad,
                                       cedulaCiudadania: Cedula, ciudadExpedicion: Ciudad,
                                       empresaRepresentada: Empresa, correo: Email)
 
-
-
-
-
-case class Cedula(value: Int) extends AnyVal
-
-object Cedula {
-  def apply(value: Int): Cedula= new Cedula(value)
-}
-
 case class Email(value: String) extends AnyVal
 
 object Email {
