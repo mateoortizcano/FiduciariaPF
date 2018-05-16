@@ -4,30 +4,24 @@ import java.util.Calendar
 
 import dominio._
 
-class OperacionesProyecto {
-   def crearProyecto (infoProyecto: NuevoProyecto): Option[Proyecto[Creacion]] = {
-     // para este for hacer las exceptiones en caso de que se ingresen valores que no corresponden
-     // a los valores esperados o que no son validos como por ejemplo si son none
+object operacionesProyecto {
+   def crearProyecto (infoProyecto: NuevoProyecto): Either[MensajesDominio, Proyecto[Creacion]] = {
      for {
-       nombre <- Nombre(infoProyecto.nombre)
        patrimonioAutonomo <- PatrimonioAutonomo(
-         "PAO001",Inmueble( infoProyecto.descripcionLinderos, "000021345",
-           Ciudad(infoProyecto.ciudadRegistroInmueble)
-         ), 1754566.2658
-       )
-       equilibrio <- PuntoEquilibrio(Porcentaje(infoProyecto.porcentajeEquilibrio),
-         Tiempo(infoProyecto.tiempoalcanceEquilibrio))
-       excedente <- Excedentes(Porcentaje(infoProyecto.porcentajeExcedenteConstructores),
-         Porcentaje(infoProyecto.porcentajeExcedenteAportantes))
-       unidadesVivienda <- Unidad(infoProyecto.unidadesProyecto)
-       precioUnidad <- Precio(infoProyecto.precioUnitario)
-       presupuesto <- Presupuesto(infoProyecto.presupuesto)
-       proyecto <- Proyecto[Creacion](
-         nombre, patrimonioAutonomo, equilibrio, excedente, unidadesVivienda,
-         precioUnidad, presupuesto
+         "PAO001",new Inmueble(infoProyecto.descripcionLinderos, "000021345",
+           infoProyecto.ciudadRegistroInmueble), 1754566.2 )
+       equilibrio <- PuntoEquilibrio(infoProyecto.porcentajeEquilibrio,
+         infoProyecto.tiempoalcanceEquilibrio)
+       excedente <- Excedentes(infoProyecto.porcentajeExcedenteConstructores,
+         infoProyecto.porcentajeExcedenteAportantes)
+       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente, infoProyecto.unidadesProyecto,
+         infoProyecto.precioUnitario, infoProyecto.presupuesto
        )
      }yield proyecto
    }
+  def eliminarProyecto = ???
+  def modificarProyecto = ???
+  def agregarFideicomiententes = ???
 }
 case class NuevoProyecto(
                         nombre: String,

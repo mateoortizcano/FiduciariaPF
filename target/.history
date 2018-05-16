@@ -2,3 +2,4 @@ compile
 test
 compile
 sbt new http4s/http4s.g8
+compile

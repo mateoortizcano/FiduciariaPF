@@ -1,5 +1,5 @@
 package dominio
 
-class Desembolso {
 
-}
+
+case class Desembolso ()

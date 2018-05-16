@@ -1,5 +1,3 @@
 package dominio
 
-case class Pago() {
-
-}
+case class Pago()

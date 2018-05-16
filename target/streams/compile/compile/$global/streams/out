@@ -1,4 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mateo/Documentos/fiduciaria/src/main/scala/puertos/Servicios.scala:40:33: value <+> is not a member of org.http4s.HttpService[cats.effect.IO][0m
-[0m[[0m[31merror[0m] [0m[0m    val services = tweetService <+> helloWorldService[0m
-[0m[[0m[31merror[0m] [0m[0m                                ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/IdeaProjects/fiduciaria/src/main/scala/dominio/Fideicomitente.scala:132:31: value withFilter is not a member of Either[dominio.MensajesDominio,Double][0m
+[0m[[0m[31merror[0m] [0m[0m      p3 <- Porcentaje.validar(porcentajeEntrega)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/IdeaProjects/fiduciaria/src/main/scala/dominio/Proyecto.scala:43:31: value withFilter is not a member of Either[dominio.MensajesDominio,Double][0m
+[0m[[0m[31merror[0m] [0m[0m      p2 <- Porcentaje.validar(porcentajeAportantes)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mateo/IdeaProjects/fiduciaria/src/main/scala/services/OperacionesProyecto.scala:17:20: ambiguous reference to overloaded definition,[0m
+[0m[[0m[31merror[0m] [0m[0mboth method apply in object Proyecto of type [A <: dominio.Etapa](nombre: String, patrimonioAutonomo: dominio.PatrimonioAutonomo, puntoEquilibrio: dominio.PuntoEquilibrio, exedentes: dominio.Excedentes, unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double)dominio.Proyecto[A][0m
+[0m[[0m[31merror[0m] [0m[0mand  method apply in object Proyecto of type (nombre: String, patrimonioAutonomo: dominio.PatrimonioAutonomo, puntoEquilibrio: dominio.PuntoEquilibrio, exedentes: dominio.Excedentes, unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double)Either[dominio.MensajesDominio,dominio.Proyecto[dominio.Creacion]][0m
+[0m[[0m[31merror[0m] [0m[0mmatch argument types (String,dominio.PatrimonioAutonomo,dominio.PuntoEquilibrio,dominio.Excedentes,Int,Double,Double)[0m
+[0m[[0m[31merror[0m] [0m[0m       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente, infoProyecto.unidadesProyecto,[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

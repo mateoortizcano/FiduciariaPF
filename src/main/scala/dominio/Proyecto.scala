@@ -9,79 +9,94 @@ trait Compra extends Preventas
 trait Construccion extends Etapa
 trait Escrituracion extends Etapa
 
-case class Proyecto [A <: Etapa] (nombre: Nombre, patrimonioAutonomo: PatrimonioAutonomo,
+case class Proyecto [A <: Etapa] (nombre: String, patrimonioAutonomo: PatrimonioAutonomo,
                      puntoEquilibrio: PuntoEquilibrio, exedentes: Excedentes,
-                     unidadesVivienda: Unidad, precioUnitario: Precio, presupuesto: Presupuesto)
+                     unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double)
 
-case class Nombre(value: String)
+object Proyecto {
+  def apply(nombre: String, patrimonioAutonomo: PatrimonioAutonomo,
+            puntoEquilibrio: PuntoEquilibrio, exedentes: Excedentes,
+            unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double): Either[MensajesDominio, Proyecto[Creacion]] =
+    for {
+      nomb <- Nombre.validar(nombre)
+      unidades <- Unidad.validar(unidadesVivienda)
+      precioUnitario <- Precio.validar(precioUnitario)
+      presup <- Presupuesto.validar(presupuesto)
+    } yield new Proyecto[Creacion](nomb, patrimonioAutonomo, puntoEquilibrio, exedentes, unidades, precioUnitario, presup)
+}
 
 object Nombre {
-  def apply(value: String): Option[Nombre] = {
-    "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\\s]*)+$".r.findFirstIn(value).map(new Nombre(_))
+  def validar(value: String): Either[MensajesDominio,String] = {
+    if (value.matches("^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\\s]*)+$"))
+      Right(value)
+    else Left(NombreInvalido())
   }
 }
 
-case class Excedentes (porcentajeConstructores: Option[Porcentaje], porcentajeAportantes: Option[Porcentaje])
+case class Excedentes (porcentajeConstructores: Double, porcentajeAportantes: Double)
 
 object Excedentes {
-  def apply(porcentajeConstructores: Porcentaje, porcentajeAportantes: Porcentaje):
-  Option[Excedentes] ={
+  def apply(porcentajeConstructores: Double, porcentajeAportantes: Double):
+  Either[MensajesDominio, Excedentes] =
     for {
-      constructor <- Porcentaje(porcentajeConstructores.value)
-      aportantes <- Porcentaje(porcentajeAportantes.value)
-      if (constructor.value + aportantes.value == 100d) //como comparo dos decimales?
-    } yield Excedentes(constructor, aportantes)
-  }
+      p1 <- Porcentaje.validar(porcentajeConstructores)
+      p2 <- Porcentaje.validar(porcentajeAportantes)
+      if (p1 + p2 == 100d)
+    }yield new Excedentes(p1, p2)
 }
 
-case class PuntoEquilibrio (pocentaje: Option[Porcentaje], tiempoLimite: Option[Tiempo])
+case class PuntoEquilibrio (pocentaje: Double, tiempoLimite: Calendar)
 
-case class Unidad(value: Int)
+object PuntoEquilibrio {
+  def apply(pocentaje: Double, tiempoLimite: Calendar): Either[MensajesDominio, PuntoEquilibrio] =
+  for {
+    p <- Porcentaje.validar(pocentaje)
+    t <- Tiempo.validar(tiempoLimite)
+  }yield new PuntoEquilibrio(p, t)
+}
 
 object Unidad {
-  def apply(value: Int): Option[Unidad] =
+  def validar(value: Int): Either[MensajesDominio,Int] =
     if (value <= 0)
-      None
+      Left(CantidadInvalida())
     else
-      Option(new Unidad(value))
+      Right(value)
 }
 
-case class Precio(value: Double)
+
 
 object Precio {
-  def apply(value: Double): Option[Precio] =
+  def validar(value: Double): Either[MensajesDominio, Double] =
     if (value <= 0)
-      None
+      Left(PrecioInvalido())
     else
-      Option(new Precio(value))
+      Right(value)
 }
 
-case class Presupuesto(value: Double)
+
 
 object Presupuesto {
-  def apply(value: Double): Option[Presupuesto] =
+  def validar(value: Double): Either[MensajesDominio, Double] =
     if (value <= 0)
-      None
+      Left(PresupuestoInvalido())
     else
-      Option(new Presupuesto(value))
+      Right(value)
 }
 
-case class Porcentaje(value: Double)
 
 object Porcentaje {
-  def apply(value: Double): Option[Porcentaje] =
+  def validar(value: Double): Either[MensajesDominio, Double] =
     if (value <= 0)
-      None
+      Left(PorcentajeInvalido())
     else
-      Option(new Porcentaje(value))
+      Right(value)
 }
 
-case class Tiempo(value: Calendar)
 
 object Tiempo {
-  def apply(value: Calendar): Option[Tiempo] =
+  def validar(value: Calendar): Either[MensajesDominio, Calendar] =
     if (value.before(Calendar.getInstance()))
-      None
+      Left(FechaInvalida())
     else
-      Option(new Tiempo(value))
+      Right(value)
 }
