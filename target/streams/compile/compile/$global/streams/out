@@ -8,6 +8,6 @@
 [0m[[0m[31merror[0m] [0m[0mboth method apply in object Proyecto of type [A <: dominio.Etapa](nombre: String, patrimonioAutonomo: dominio.PatrimonioAutonomo, puntoEquilibrio: dominio.PuntoEquilibrio, exedentes: dominio.Excedentes, unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double)dominio.Proyecto[A][0m
 [0m[[0m[31merror[0m] [0m[0mand  method apply in object Proyecto of type (nombre: String, patrimonioAutonomo: dominio.PatrimonioAutonomo, puntoEquilibrio: dominio.PuntoEquilibrio, exedentes: dominio.Excedentes, unidadesVivienda: Int, precioUnitario: Double, presupuesto: Double)Either[dominio.MensajesDominio,dominio.Proyecto[dominio.Creacion]][0m
 [0m[[0m[31merror[0m] [0m[0mmatch argument types (String,dominio.PatrimonioAutonomo,dominio.PuntoEquilibrio,dominio.Excedentes,Int,Double,Double)[0m
-[0m[[0m[31merror[0m] [0m[0m       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente, infoProyecto.unidadesProyecto,[0m
+[0m[[0m[31merror[0m] [0m[0m       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente,[0m
 [0m[[0m[31merror[0m] [0m[0m                   ^[0m
 [0m[[0m[31merror[0m] [0m[0mthree errors found[0m

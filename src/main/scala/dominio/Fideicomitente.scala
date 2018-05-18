@@ -89,7 +89,7 @@ object Aportante {
     }yield new Aportante(nom, ciu, ema, docId, empresa)
 }
 
-sealed trait TipoDoc
+trait TipoDoc
 object CC extends TipoDoc
 object NIT extends TipoDoc
 

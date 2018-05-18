@@ -14,8 +14,8 @@ object operacionesProyecto {
          infoProyecto.tiempoalcanceEquilibrio)
        excedente <- Excedentes(infoProyecto.porcentajeExcedenteConstructores,
          infoProyecto.porcentajeExcedenteAportantes)
-       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente, infoProyecto.unidadesProyecto,
-         infoProyecto.precioUnitario, infoProyecto.presupuesto
+       proyecto <- Proyecto(infoProyecto.nombre, patrimonioAutonomo, equilibrio, excedente,
+         infoProyecto.unidadesProyecto, infoProyecto.precioUnitario, infoProyecto.presupuesto
        )
      }yield proyecto
    }

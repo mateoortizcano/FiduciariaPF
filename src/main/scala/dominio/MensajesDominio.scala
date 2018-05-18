@@ -17,3 +17,4 @@ final case class ConstructorInvalido(codigo: Int =107 ,mensaje: String = "Fideic
 final case class AdherenteInvalido(codigo: Int =108 ,mensaje: String = "Fideicomitente adherente inválido") extends MensajesDominio
 final case class CedulaInvalida(codigo: Int =109 ,mensaje: String = "Cédula inválida") extends MensajesDominio
 final case class NITInvalido(codigo: Int =110 ,mensaje: String = "NIT inválido") extends MensajesDominio
+final case class ExcedentesInvalidos(codigo: Int =111 ,mensaje: String = "La suma de los porcentajes de los excedentes es inválida") extends MensajesDominio
